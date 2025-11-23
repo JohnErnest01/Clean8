@@ -616,5 +616,92 @@ img {
     transform: scale(1.03);
 }
 
+/* ===========================
+   EXTRA MOBILE RESPONSIVENESS FIXES
+   =========================== */
+
+/* Make navbar layout stack on small screens */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  #btn-book-now {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Improve team page responsiveness */
+@media (max-width: 768px) {
+  .team-container h1 {
+    font-size: 2rem;
+  }
+
+  .team-card {
+    width: 180px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .team-grid {
+    gap: 1rem;
+  }
+
+  .team-card {
+    width: 150px;
+    height: 200px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+}
+
+/* Services page fix for wide cards */
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    margin: 0 auto;
+    max-width: 380px;
+  }
+}
+
+/* Prevent overflow on phones */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix footer text size on mobile */
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.8rem;
+  }
+}
 
 
