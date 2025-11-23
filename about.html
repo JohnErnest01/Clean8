@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLEAN8 | About Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR (Static, no animation) -->
+  <header id="navbar">
+    <div class="container nav">
+      <div class="logo">CLEAN8</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services-pricing.html">Services</a>
+      </nav>
+      <a href="booking.html">
+      <button class="btn-primary" id="btn-book-now">Book Now</button>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO / ABOUT BANNER -->
+  <section class="hero about-hero fade-in">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>About CLEAN8</h1>
+      <p>Student-led innovation bringing comfort, cleanliness, and care into every home.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT MAIN SECTION -->
+  <section class="about container fade-in">
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>Clean8 is a student-led home cleaning service created by the University Team of Innovators (UTI). We aim to provide practical and meaningful solutions that make everyday life easier.</p>
+
+      <h2>Our Team Mission</h2>
+      <p>The University Team of Innovators exists to serve the people and create meaningful change through innovation. We develop practical solutions that improve everyday living.</p>
+
+      <h2>Our Mission with Clean8</h2>
+      <p>Clean8 was created to offer a fast, reliable, and convenient way for people to keep their homes clean. We know life gets busy—so we take care of the cleaning, giving you more time for what matters.</p>
+
+      <h2>Why Choose Clean8?</h2>
+      <ul>
+        <li><strong>Fast Response Time</strong> – We value your time and ensure prompt service.</li>
+        <li><strong>Reliable Cleaners</strong> – Our team delivers consistent, high-quality results.</li>
+        <li><strong>Student-Led Innovation</strong> – Fresh ideas and creative solutions at the core.</li>
+        <li><strong>Flexible Plans</strong> – One-time cleaning or weekly subscriptions — your choice.</li>
+      </ul>
+
+      <p>At Clean8, we believe a clean home is more than just neatness — it’s peace of mind, comfort, and extra time for the things you love.</p>
+    </div>
+
+    <div class="about-image fade-in">
+      <img src="Images/logo clean it.jpg" alt="Clean8 Team">
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats fade-in">
+    <div class="stat-box">
+      <h3>500+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-box">
+      <h3>1,200+</h3>
+      <p>Completed Cleanings</p>
+    </div>
+    <div class="stat-box">
+      <h3>100%</h3>
+      <p>Commitment to Quality</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fade-in">
+    <div class="container">
+      <p>© 2025 CLEAN8. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Fade-In Scroll Animation (excluding navbar)
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+  
+</body>
+</html>

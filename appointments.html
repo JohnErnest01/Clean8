@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Appointments</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f9fb;
+    padding: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.view-btn { background: #007bff; color: white; }
+.resched-btn { background: #ffc107; color: black; }
+.cancel-btn { background: #dc3545; color: white; }
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<a class="back-btn" href="index.html">← Back</a>
+
+<h2>My Appointments</h2>
+
+<table id="appointmentTable">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+</div>
+
+<script src="appointments.js"></script>
+<script>
+function loadTable() {
+    const tbody = document.querySelector("#appointmentTable tbody");
+    tbody.innerHTML = "";
+
+    const appts = loadAppointments();
+
+    appts.forEach((a, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${a.date}</td>
+            <td>${a.time}</td>
+            <td>${a.service}</td>
+            <td>${a.status}</td>
+            <td class="actions">
+                <button class="view-btn" onclick="alertDetails(${index})">View</button>
+                <button class="resched-btn" onclick="reschedule(${index})">Reschedule</button>
+                <button class="cancel-btn" onclick="cancelAppt(${index})">Cancel</button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+function alertDetails(i) {
+    const a = loadAppointments()[i];
+    alert(`
+Name: ${a.fullName}
+Contact: ${a.contact}
+Service: ${a.service}
+Frequency: ${a.frequency}
+Bedrooms: ${a.bedrooms}
+Bathrooms: ${a.bathrooms}
+Date: ${a.date}
+Time: ${a.time}
+Notes: ${a.notes}
+Status: ${a.status}
+    `);
+}
+
+function reschedule(i) {
+    const appts = loadAppointments();
+    let newDate = prompt("New date:", appts[i].date);
+    let newTime = prompt("New time:", appts[i].time);
+
+    if (!newDate || !newTime) return;
+
+    appts[i].date = newDate;
+    appts[i].time = newTime;
+
+    saveAppointments(appts);
+    loadTable();
+}
+
+function cancelAppt(i) {
+    if (confirm("Cancel this booking?")) {
+        deleteAppointment(i);
+        loadTable();
+    }
+}
+
+loadTable();
+
+</script>
+</body>
+</html>

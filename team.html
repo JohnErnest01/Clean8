@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLEAN8 | Meet the Team</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ===== GLOBAL ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: #f3f7ff;
+    color: #1e293b;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    background: #2563eb;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  .back-btn:hover {
+    background: #1d4ed8;
+  }
+
+  /* ===== TEAM CONTAINER ===== */
+  .team-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .team-container h1 {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+
+  /* ===== TEAM GRID ===== */
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* ===== TEAM CARD ===== */
+  .team-card {
+    width: 220px;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+  }
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .team-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(75%);
+  }
+
+  /* ===== TEAM NAME ===== */
+  .team-name {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.4);
+    padding: 4px 12px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .team-card:hover .team-name {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .team-card {
+      width: 180px;
+      height: 230px;
+    }
+    .team-name {
+      font-size: 14px;
+    }
+  }
+  
+</style>
+</head>
+<body>
+
+<!-- BACK BUTTON -->
+<a href="index.html" class="back-btn">← Back</a>
+
+<!-- TEAM SECTION -->
+<div class="team-container">
+  <h1>Meet the CLEAN8 Team</h1>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="Images/78f7505c-db6f-4d27-9b03-e3c9d1a87b01.jpg" alt="Member 1">
+      <div class="team-name">  Keith Howard Emata  </div>
+    </div>
+
+    <div class="team-card">
+      <img src="Images/68d6a5f7-1460-4608-88b1-59521e83572e.jpg" alt="Member 2">
+      <div class="team-name">Marjorie Petarco</div>
+    </div>
+
+    <div class="team-card">
+      <img src="Images/b5866f55-0064-4141-9b24-1f00890a74e7.jpg" alt="Member 3">
+      <div class="team-name">Febie Mae Bahade</div>
+    </div>
+
+    <div class="team-card">
+      <img src="Images/c7710f4f-c32e-40bc-a4b2-ba48890a2c09.jpg" alt="Member 4">
+      <div class="team-name">John Rey Dela Torre</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

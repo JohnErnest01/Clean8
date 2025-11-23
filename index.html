@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLEAN8 | Home Cleaning Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER / NAV (Static, no animation) -->
+  <header id="navbar">
+    <div class="container nav">
+      <div class="logo">CLEAN8</div>
+      <nav class="nav-links">
+        <a href="index.html"class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services-pricing.html">Services</a>
+      </nav>
+      <a href="booking.html">
+      <button class="btn-primary" id="btn-book-now">Book Now</button>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero fade-in">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Custom Home Cleaning Services</h1>
+      <p>Enjoy a spotless space with our trusted cleaning professionals. Eco-friendly, flexible, and always on time.</p>
+      <div class="hero-buttons">
+         <a href="booking.html">
+        <button class="btn-primary" id="hero-book">Book Now</button>
+        </a>
+        <a href="services-pricing.html">
+          <button class="btn-secondary">See Our Services</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section class="dashboard container fade-in">
+    <h2>Your Dashboard</h2>
+    <p>Quick access to everything you need</p>
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <i class="fa-solid fa-broom"></i>
+        <h3>Book a Cleaning</h3>
+        <p>Schedule a home or office cleaning in just one click.</p>
+         <a href="booking.html">
+        <button class="btn-secondary" id="dashboard-book">Open</button>
+        </a>
+      </div>
+      <div class="dashboard-card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <h3>My Appointments</h3>
+        <p>View, reschedule, or cancel your cleaning appointments.</p>
+        <a href="appointments.html">
+        <button class="btn-secondary" id="dashboard-appointments">Open</button>
+        </a>
+      </div>
+      <div class="dashboard-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>Our Team</h3>
+        <p>Meet the trusted professionals behind CLEAN8.</p>
+        <a href="team.html">
+        <button class="btn-secondary" id="dashboard-team">Open</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about container fade-in">
+    <div class="about-text">
+      <h2>Bringing Freshness, Comfort, and Care to Every Home</h2>
+      <p>At CLEAN8, we go beyond surface cleaning — we bring life back to your space. Our dedicated team combines expert care, eco-friendly solutions, and attention to detail to make every home feel brand new.</p>
+      <ul>
+        <li>Professional & Trusted Team</li>
+        <li>Eco-Friendly Cleaning Products</li>
+        <li>Satisfaction Guaranteed</li>
+        <li>Always On Time</li>
+      </ul>
+      <a href="about.html">
+        <button class="btn-primary">Learn More</button>
+      </a>
+    </div>
+    <div class="about-image fade-in">
+      <img src="Images/logo clean it.jpg" alt="logo clean it">
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats fade-in">
+    <div class="stat-box">
+      <h3>500+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-box">
+      <h3>1,200+</h3>
+      <p>Completed Cleanings</p>
+    </div>
+    <div class="stat-box">
+      <h3>100%</h3>
+      <p>Service Commitment</p>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services container fade-in">
+    <h2>Complete Home & Office Cleaning You Can Trust</h2>
+    <p>We provide a full range of cleaning services — from homes to offices. Our goal is to deliver spotless results with care, efficiency, and satisfaction guaranteed.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="Images/professional-cleaning-service-person-using-steam-cleaner-office.jpg" alt="Deep Cleaning">
+        <h3>Deep Cleaning</h3>
+        <p>Thorough cleaning for a fresh start and a healthy environment.</p>
+      </div>
+      <div class="service-card">
+        <img src="Images/cleaning-services-9663247_1920.jpg" alt="Standard Cleaning">
+        <h3>Standard Cleaning</h3>
+        <p>Perfect maintenance cleaning to keep your space tidy and spotless.</p>
+      </div>
+      <div class="service-card">
+        <img src="Images/photo-1577412647305-991150c7d163.jpg" alt="Office Cleaning">
+        <h3>Office Cleaning</h3>
+        <p>Professional cleaning for productive, hygienic workplaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fade-in">
+    <div class="container">
+      <p>© 2025 CLEAN8. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Fade-In Scroll Animation (except navbar)
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  
+</body>
+</html>

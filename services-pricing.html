@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<link rel="stylesheet" href="style.css">
+
+<header id="navbar">
+  <div class="container nav">
+    <div class="logo">CLEAN8</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services-pricing.html"class="active">Services</a>
+
+      
+    </nav>
+     <a href="booking.html">
+    <button class="btn-primary" id="btn-book-now">Book Now</button>
+    </a>
+  </div>
+</header>
+
+
+
+
+
+
+<section class="services container fade-in">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="service-grid">
+
+        <!-- Regular Cleaning -->
+        <div class="service-card">
+            <h3>Regular Cleaning</h3>
+            <p class="desc">For condos and small homes. Light maintenance cleaning.</p>
+              <link rel="stylesheet" href="style.css" />
+
+            <div class="price-box">
+                <h4>Subscription</h4>
+                <ul>
+                    <li><span>Weekly (4×)</span> <strong>₱1,600</strong></li>
+                    <li><span>Bi-Weekly (2×)</span> <strong>₱900</strong></li>
+                    <li><span>Monthly (1×)</span> <strong>₱550</strong></li>
+                </ul>
+
+                <h4>One-Time</h4>
+                <p><strong>₱500 per visit</strong></p>
+            </div>
+
+            <h4>Includes</h4>
+            <ul class="includes">
+                <li>Floor cleaning</li>
+                <li>Dusting</li>
+                <li>Surface wiping</li>
+                <li>Basic bathroom & kitchen cleaning</li>
+            </ul>
+
+        </div>
+
+        <!-- Full House Cleaning -->
+        <div class="service-card">
+            <h3>Full House Cleaning</h3>
+            <p class="desc">For standard homes needing more time.</p>
+
+            <div class="price-box">
+                <h4>One-Time Rates</h4>
+                <ul>
+                    <li><span>Small House</span> <strong>₱600</strong></li>
+                    <li><span>Medium House</span> <strong>₱700</strong></li>
+                    <li><span>Large House</span> <strong>₱800</strong></li>
+                </ul>
+
+                <h4>Subscriptions</h4>
+                <ul>
+                    <li><span>Weekly</span> <strong>₱2,000</strong></li>
+                    <li><span>Bi-Weekly</span> <strong>₱1,100</strong></li>
+                </ul>
+            </div>
+
+            <h4>Includes</h4>
+            <ul class="includes">
+                <li>Sweeping & mopping</li>
+                <li>Wiping & dusting</li>
+                <li>Bathroom cleaning</li>
+                <li>General upkeep</li>
+            </ul>
+
+            
+        </div>
+
+        <!-- Deep Cleaning -->
+        <div class="service-card">
+            <h3>Deep Cleaning</h3>
+            <p class="desc">Heavy, intensive cleaning work.</p>
+
+            <div class="price-box">
+                <h4>Rates</h4>
+                <ul>
+                    <li><span>Small House</span> <strong>₱1,800</strong></li>
+                    <li><span>Medium House</span> <strong>₱2,200</strong></li>
+                    <li><span>Large House</span> <strong>₱3,000</strong></li>
+                    <li><span>Extra Large</span> <strong>₱3,500</strong></li>
+                </ul>
+            </div>
+
+            <h4>Includes</h4>
+            <ul class="includes">
+                <li>Grout cleaning</li>
+                <li>Deep kitchen & bathroom scrub</li>
+                <li>Behind appliances</li>
+                <li>Heavy dust & stain removal</li>
+            </ul>
+
+            
+        </div>
+
+        <!-- Add-Ons -->
+        <div class="service-card addons">
+    <h3>Add-On Services</h3>
+
+    <h4>Standard Add-Ons</h4>
+
+    <ul class="addon-list">
+        <li class="addon-item"><span>Inside Fridge</span> <strong>₱150</strong></li>
+        <li class="addon-item"><span>Window Cleaning</span> <strong>₱150</strong></li>
+        <li class="addon-item"><span>Extra Bedroom</span> <strong>₱100</strong></li>
+        <li class="addon-item"><span>Extra Bathroom</span> <strong>₱100</strong></li>
+        <li class="addon-item"><span>Dishwashing</span> <strong>₱50</strong></li>
+        <li class="addon-item"><span>Laundry Fold-Only</span> <strong>₱80</strong></li>
+    </ul>
+
+    <h4>Premium Add-Ons</h4>
+
+    <ul class="addon-list">
+        <li class="addon-item"><span>Mattress Vacuum</span> <strong>₱200</strong></li>
+        <li class="addon-item"><span>Sofa Vacuum</span> <strong>₱150</strong></li>
+        <li class="addon-item"><span>Floor Polishing</span> <strong>₱350</strong></li>
+    </ul>
+
+    <style>
+        .service-grid > .service-card:last-child {
+    grid-column: 1 / -1;      /* makes it full-width */
+    max-width: 450px;         /* limits width */
+    margin: 0 auto;           /* centers it */
+}
+    </style>
+    
+</div>
+
+    </div>
+</section>
+
+
+<script>
+    // Fade-In Scroll Animation (excluding navbar)
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</head>
+<body>
+    
+</body>
+</html>
